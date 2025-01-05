@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes</title>
+  </head>
+  <body>
+    <script>
+      class Car {
+        constructor(name) {
+          this.brand = name;
+        }
+      }
+      const mycar = new Car("Ford");
+      document.write(mycar.brand);
+
+      /*Note: The constructor function is called automatically when the object is initialized. */
+
+      // Method in class
+      // Example: Create a method named "present":
+
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        present() {
+          return `<br> Hello, my name is ${this.name} and I am ${this.age} years old.`;
+        }
+      }
+      const person = new Person("John Doe", 25);
+      document.write(person.present());
+
+      // Class Inheritance: To create a class inheritance, use the extends keyword.
+
+      class Animal {
+        constructor(name) {
+          this.name = name;
+        }
+        introduce() {
+          return `<br> My name is ${this.name}.`;
+        }
+      }
+      class Model extends Animal {
+        constructor(name, mod) {
+          super(name);
+          this.model = mod;
+        }
+        show() {
+          return `${this.introduce()} I am ${this.model} years old.`;
+        }
+      }
+      const animal = new Animal("Leopard", 25);
+      document.write(animal.show());
+    </script>
+  </body>
+</html>
