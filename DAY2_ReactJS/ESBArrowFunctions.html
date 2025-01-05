@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Functions</title>
+  </head>
+  <body>
+    <p>This demonstrates a regular function, Not an arrow function.</p>
+    <p id="demo"></p>
+    <p id="after"></p>
+    <p id="parameter"></p>
+    <script>
+      // Before
+      hello = function () {
+        return "Hello world!";
+      };
+
+      // after
+      Hello = () => {
+        return "Hello world!";
+      };
+
+      // Arrow functios with Paramters:
+      greetings = (val) => "Hello, Bikash" + val;
+
+      // Call the function
+      document.getElementById("demo").innerHTML = hello();
+      document.getElementById("after").innerHTML = Hello();
+      document.getElementById("parameter").innerHTML = greetings("Ymaphu Rai");
+    </script>
+  </body>
+</html>
