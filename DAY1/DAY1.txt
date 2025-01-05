@@ -15,3 +15,6 @@
 # Run the React Application:
 - Run this command to move to the my-react-app directory : cd my-react-app
 -Run this command to run the React application my-react-app: npm start
+
+- To install the lastes version , form your project folder run the following form the terminal: npm i react@latest react-dom@latest
+
