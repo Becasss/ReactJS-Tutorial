@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Methods</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <script>
+      // .map array method - used to generate lists.
+
+      // Example: generate a list of items form an array:
+      import React from "react";
+      import ReactDom from "react-dom/client";
+
+      const myArray = ["apple", "orange", "orange"];
+
+      const myList = myArray.map((item) => <p> {item}</p>);
+
+      document.getElementById("demo").innerHTML = myList;
+    </script>
+  </body>
+</html>
