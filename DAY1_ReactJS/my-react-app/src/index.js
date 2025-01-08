@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom/client';
 
 
 function Football() {
-    const shoot = () => {
-        alert('Shot!');
+    const shoot = (a) => {
+        alert(a);
     }
+
     return (
-        <button onClick={shoot}>Take a Shot!</button>
+        <button onClick={() => shoot("Goal!")}> Take a Shot!</button >
     );
 }
-
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 root.render(<Football />);
