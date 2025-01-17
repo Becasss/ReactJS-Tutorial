@@ -1,20 +1,29 @@
 import '..module/.my-sass.scss';
+import Todos from "..module/Todos";
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 
-const Header = ( ) => {
+const App = () => {
+    const [count, setCount] = useState(0);
+    const [todos, setTodos] = useState(['todos 1', 'todos 2']);
+    
+    const increment = () => {
+        setCount((c) => c + 1);
+    };
+
     return (
         <>
-        <h1>Hello Style</h1>
-        <p>Add a little Style!</p>
+            <Todos todos={todos} />
+            <hr />
+            <div>
+                Count: {count}
+                <button onClick={increment}>Increment</button>
+            </div>
         </>
-    )
-}
+    );
+};
 
-const container = document.getElementById('root');
-const root = ReactDOM.createRoot(container);
-root.render(<Header/>);
-
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
 /*
 You are now watching
 the React file 'index.js'
