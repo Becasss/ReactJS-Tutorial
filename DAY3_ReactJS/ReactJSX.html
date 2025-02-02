@@ -27,6 +27,21 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        margin: 20px;
+        font-family: Arial, sans-serif;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function HelloWorld() {
+        return <h1>Hello, World!</h1>;
+      }
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<HelloWorld />);
+    </script>
+  </body>
 </html>
