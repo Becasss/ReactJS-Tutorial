@@ -1,0 +1,23 @@
+import React, {useState} from 'react';
+import ReactDOM from "react-dom/client";
+
+function FavoriteColor(){
+    const [color, setColor] = useState('red');
+
+    return()
+    <>
+
+    <h1>My favourite color is {color}!</h1>
+
+    <button type="button" onclick={() => setColor('Blue')}>Blue</button>
+    <button type="button" onclick={() => setColor('Green')}>Green</button>
+    <button type="button" onclick={() => setColor('Red')}>Red</button>
+    <button type="button" onclick = {() => setColor("Pink")}>Pink</button>
+
+</>
+);
+}
+
+
+const root = ReactDOM.createRoot(document.getElementByID('root'));
+root.render(<FavoriteColor/>);
