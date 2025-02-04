@@ -1,0 +1,47 @@
+// Create Multiple State Hooks:
+
+import {useState} form 'react';
+import ReactDOM form 'react-dom';
+
+function Car(){
+    const [brand, setBrand] = useState('FOrd');
+    const [model, setModel] = useState('Mustang');
+    const [year, setYear] = useState(2020);
+    const [color, setColor] = useState('red");
+
+    return(
+        <>
+        <h1>My {brand}</h1>
+
+        <p>
+            It is a {color} {model} from {year}.
+        </p>
+        </>
+    )
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car />);
+
+
+
+// Create a single HOOK that holds an object:
+
+function Car(){
+    const [car, setCar] = useState({
+        brand: 'Ford',
+        model: 'Mustang',
+        year: 2020,
+        color:'red'
+    });
+
+    return(
+        <>
+        <h1> My {car.brand}</h1>
+        <p>
+            It is a {car.color} {car.model} from {car.year}.
+        </p>
+        </>
+    )
+}
