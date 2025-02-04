@@ -1,0 +1,44 @@
+// Updating Ojbects and Arrays in State -  use the Javascript spread operator to update only the color of the car:
+
+import {useState} from 'react';
+import ReactDOM from'react-dom/client';
+
+function Car(){
+
+    const [car, setCar] = useState({
+        brand: 'Ford',
+        model: 'Mustang',
+        year: 2020,
+        color: 'red'
+    });
+
+    const updateColor = () => {
+        setCar(previousState => {
+            return {...prevousState, color: "red"}
+    });
+}
+
+return (
+    <>
+    <h1>My {car.brand}</h1>
+
+    <p>
+        It is a {car.color} {car.model} from {car.year}.
+    </p>
+    <button type="button" onclick="{updateColor}">blue</button>
+    </a>
+    )
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car />);
+
+
+
+// Simple logic of spread Operator.
+
+const numbers = [1,2,4];
+const newNumbers = [...numbers, 4,5,6];
+
+colsoge.log(newNumbers);  // Output : [1,2,3,4,5,5.6]
