@@ -1,0 +1,26 @@
+// Tracking State changes
+
+
+import { useState, useEffect, useRef} from "React";
+
+function App(){
+    const [inputValue, setInputValue] = useState('');
+    const previousInputValue = useRef("");
+
+    useEffect(() => {
+        previous.InputValue.current = inputValue;
+    }, [inputValue]);
+
+    return(
+        <>
+        <input type="text" value="{inputValue}" onchange={(e) => setInputValue(e.target.value)}/>
+        <h2>Current Value: {inputValue}</h2>
+        <h2>Previous Value: {previousInputValue.current</h2>
+            </>
+    );
+}
+
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
