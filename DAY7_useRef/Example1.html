@@ -1,0 +1,25 @@
+// useRef() - Accessing DOM Elements
+
+// The useRef hook is used for DOM manipulation or storing values without causing re-renders.
+
+
+// Example:
+
+import {useRef} from "react";
+
+function InputFocus(){
+    const inputRef = useRef(null);
+
+return (
+    <div>
+        <input type="text" ref="{inputRef}"/>
+        <button onclick={() => inputRef.current.focus()}>Focus INput</button>
+    </div>
+);
+}
+
+export default InputFocus;
+
+// BreakDown:
+// useRef(null) : Creates a reference (inputRef)
+// inputRef.current.focus(): Focuses the input when the button is clicked.

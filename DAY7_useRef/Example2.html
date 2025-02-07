@@ -1,0 +1,11 @@
+// Use usRef to track application re-renders import { useState, useEffect,
+useRef } from "react"; function App(){ const [inputValue, setInputValue] =
+useState(""); const count = useRef(0); useEffect(() => { count.current =
+count.current + 1; }); return(
+<div>
+  <input type="text" value="{inputValue}" onChange = {(e) =>
+  setInputValue(e.target.value)}/>
+  <h1>Render count: {count.current}</h1>
+</div>
+); } const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
