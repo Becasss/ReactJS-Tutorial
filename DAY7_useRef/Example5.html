@@ -1,0 +1,11 @@
+import { useEffect, useRef, useState } from "react"; function PreviousValue(){
+const [count, setCount] = useState(0); const prevCountRef = useRef(null);
+useEffect(() => { prevCountRef.current = count; // Store Prevous value const
+prevCountRef = useRef(null); useEffect(() => { prevCountRef.current = count; //
+Store Previous value }, [count]); // Runs when count changes return (
+<div>
+  <p>Current Count: {count}</p>
+  <p>Previous Count: {prevCountRef.current}</p>
+  <button onclick="{() => setCount(count + 1)}">Increment</button>
+</div>
+); }) }
