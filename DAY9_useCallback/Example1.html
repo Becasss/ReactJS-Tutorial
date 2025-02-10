@@ -1,0 +1,21 @@
+import {useState} from 'react';
+import Child from "./Child";
+
+
+export default function Parent(){
+    const [count, setCount] = useState(0);
+
+
+    // New function is created on every render
+    const handleClick = () =>{
+        console.log("Clicked!");
+    };
+
+    return (
+        <div>
+            <button onClick = {() => setCount(count + 1)}>Increment : {count}</button>
+            <Child onClick = {handleClick} />
+
+        </div>
+    );
+}
