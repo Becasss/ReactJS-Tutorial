@@ -1,0 +1,17 @@
+import {useState} from "react"; function ExpensiveComponent({count}){ // the
+expensive functio runs on Every render const expensiveValue =
+expensiveFunction(count); return
+<p>Computed Value: {expensiveValue}</p>
+; } function expensiveFunction(num){ consle.log("Computing...."); return num *2;
+// Simulating an expensive calculation } export default function App(){ const
+[count, setCount] = useState(0) const [toggle, setToggle] = useState(false); }
+
+
+return(
+    <div>
+        <button onClick = {() =>setCount(count + 1)}> Increment: {count}</button>
+        <button onClick = {() => setToggle(!toggle)}> Toggle</button>
+        <ExpensiveComponent count = {count}/>
+    </div>
+);
+}
