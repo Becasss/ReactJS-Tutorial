@@ -1,0 +1,27 @@
+import {useState, useMemo} from 'react';
+
+
+function ExpensiveComponent({count}){
+    // memoized value only recalculates when count changes
+
+    const expensiveValue = useMemo(()=>{
+        console.log("Computing...");
+        retrun count*2;
+    },[count]);
+
+    return <p>Computed value: {expensiveValue}</p>
+
+}
+
+export default function App(){
+    const [count, setCount] = useState(0);
+    const [toggle, setToggle] = useState(false);
+
+    return (
+        <div>
+            <button onClick ={()=> setCount(count +1)}> Increment</button>
+            <button onClick = {()=> setToggle(!toggle)}>Toggle</button>
+            <ExpensiveComponent count={count}/>  {/* count prop is passed to ExpensiveComponent */}
+        </div>
+    );
+    }
